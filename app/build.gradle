@@ -9,14 +9,19 @@ android {
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            shrinkResources false
         }
     }
+
+    lintOptions {
+        abortOnError false
+    }
+
 }
 
 dependencies {
@@ -26,5 +31,16 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.3.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha8'
-    testCompile 'junit:junit:4.12'
+    compile project(path: ':core')
+
+//chats
+    compile("com.quickblox:quickblox-android-sdk-chat:$rootProject.qbSdkVersion")
+    compile("com.quickblox:quickblox-android-sdk-content:$rootProject.qbSdkVersion")
+
+    compile 'com.github.orangegangsters:swipy:1.2.2@aar'
+    compile "com.github.bumptech.glide:glide:${rootProject.glideVersion}"
+    compile "se.emilsjolander:stickylistheaders:${rootProject.stickyListHeaders}"
+//    chats
 }
+
+apply plugin: 'com.google.gms.google-services'

@@ -1,23 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v4.widget.SlidingPaneLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/SlidingPanel"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/sliding_panel"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
-    <LinearLayout
-        android:layout_width="240dp"
+    <com.alex.mirash.sealchat.menu.MenuView
+        android:layout_width="@dimen/menu_width"
         android:layout_height="match_parent"
         android:layout_gravity="left"
-        >
-
-        <ListView
-            android:id="@+id/MenuList"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
-        </ListView>
-    </LinearLayout>
+        android:background="#ffffff"
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,12 +20,17 @@
         android:background="#101010"
         android:orientation="vertical"
         >
-
+        <com.alex.mirash.sealchat.chat.view.ActionBar
+            android:id="@+id/chat_action_bar"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:padding="3dp"
+            android:background="#ffffff"
+            />
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/ic_launcher_round"
+            android:src="@drawable/ic_launcher"
             />
     </LinearLayout>
-
 </android.support.v4.widget.SlidingPaneLayout>
