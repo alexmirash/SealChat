@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v4.widget.SlidingPaneLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/sliding_panel"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,25 +11,28 @@
         android:layout_gravity="left"
         android:background="#ffffff"
         />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="right"
-        android:background="#101010"
         android:orientation="vertical"
         >
         <com.alex.mirash.sealchat.chat.view.ActionBar
             android:id="@+id/chat_action_bar"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:padding="3dp"
             android:background="#ffffff"
+            android:padding="3dp"
             />
-        <ImageView
+        <FrameLayout
+            android:id="@+id/main_chat_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/ic_launcher"
-            />
+            >
+            <com.alex.mirash.sealchat.chat.view.ChatView
+                android:id="@+id/chat_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+        </FrameLayout>
     </LinearLayout>
 </android.support.v4.widget.SlidingPaneLayout>

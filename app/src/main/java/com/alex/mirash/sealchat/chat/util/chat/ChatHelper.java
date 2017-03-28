@@ -259,7 +259,7 @@ public class ChatHelper {
     }
 
     public void getDialogs(QBRequestGetBuilder customObjectRequestBuilder, final QBEntityCallback<ArrayList<QBChatDialog>> callback) {
-        customObjectRequestBuilder.setLimit(DIALOG_ITEMS_PER_PAGE);
+//        customObjectRequestBuilder.setLimit(DIALOG_ITEMS_PER_PAGE);
 
         QBRestChatService.getChatDialogs(null, customObjectRequestBuilder).performAsync(
                 new QbEntityCallbackWrapper<ArrayList<QBChatDialog>>(callback) {

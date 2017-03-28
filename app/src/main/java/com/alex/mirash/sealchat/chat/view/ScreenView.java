@@ -11,12 +11,13 @@ import android.widget.FrameLayout;
  * @author Mirash
  */
 
-public abstract class ScreenView extends FrameLayout implements IActivityCallback {
+public abstract class ScreenView<T extends Activity> extends FrameLayout implements IActivityCallback {
+    protected T activity;
 
     public ScreenView(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
+        activity = (T) context;
         init();
-
     }
 
     public ScreenView(@NonNull Context context) {
@@ -25,8 +26,8 @@ public abstract class ScreenView extends FrameLayout implements IActivityCallbac
 
     protected abstract void init();
 
-    protected Activity getActivity() {
-        return (Activity) getContext();
+    protected T getActivity() {
+        return activity;
     }
 
     @Override

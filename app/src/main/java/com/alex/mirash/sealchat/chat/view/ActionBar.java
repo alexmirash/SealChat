@@ -23,5 +23,10 @@ public class ActionBar extends RelativeLayout {
 
     private void init() {
         inflate(getContext(), R.layout.view_chat_action_bar, this);
+        titleView = (TextView) findViewById(R.id.chat_title);
+    }
+
+    public void setTitleText(String title) {
+        titleView.setText(title);
     }
 }
